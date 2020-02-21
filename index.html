@@ -1,0 +1,283 @@
+<head>
+  <title>||Работа с элементами||</title>
+</head>
+<style>
+  body {
+    margin-left: 40%;
+
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-weight: normal;
+  }
+
+  #btn {
+    width: 172px;
+    height: 25px;
+    margin: 1px;
+    border: none;
+    border-radius: 5px;
+    background: #fc0;
+    text-align: center;
+    user-select: none;
+    outline: none;
+    display: block;
+
+
+  }
+
+  #btn:hover {
+    background: #f70;
+    color: #fff;
+  }
+
+  input {
+    text-align: center;
+  }
+</style>
+
+<body>
+  <input id="input" type="text">
+</body>
+
+<script>
+  var properties = [{
+      title: 'Добавить +',
+      tag: 'input',
+      events: {
+        'click': function () {
+          alert("+");
+        },
+        'mouseover': function () {
+          console.log('+');
+        },
+
+      },
+
+    },
+
+
+
+    {
+      title: 'Добавить -',
+      tag: 'button',
+      events: {
+        'click': function () {
+          alert("-");
+        },
+        'mouseover': function () {
+          console.log('-');
+        },
+
+
+      },
+
+    },
+    {
+      title: 'Добавить /',
+      tag: 'span',
+      events: {
+        'click': function () {
+          alert("/");
+        },
+        'mouseover': function () {
+          console.log('/');
+        },
+
+      },
+    },
+    {
+      title: 'Добавить *',
+      tag: 'p',
+      events: {
+        'click': function () {
+          alert("*");
+        },
+        'mouseover': function () {
+          console.log('*');
+        },
+
+
+      },
+    },
+    {
+      title: '1',
+      tag: 'area',
+      events: {
+        'click': function () {
+          alert("1");
+        },
+        'mouseover': function () {
+          console.log('1');
+        },
+
+
+      },
+
+
+    },
+    {
+      title: '2',
+      tag: 'base',
+      events: {
+        'click': function () {
+          alert("2");
+        },
+        'mouseover': function () {
+          console.log('2');
+        },
+
+
+      },
+    },
+    {
+      title: '3',
+      tag: 'h1',
+      events: {
+        'click': function () {
+          alert("3");
+        },
+        'mouseover': function () {
+          console.log('3');
+        },
+
+
+      },
+    },
+    {
+      title: '4',
+      tag: 'h2',
+      events: {
+        'click': function () {
+          alert("4");
+        },
+        'mouseover': function () {
+          console.log('4');
+        },
+
+      },
+    },
+    {
+      title: '5',
+      tag: 'b',
+      events: {
+        'click': function () {
+          alert("5");
+        },
+        'mouseover': function () {
+          console.log('5');
+        }
+      },
+    },
+    {
+      title: '6',
+      tag: 'div',
+      events: {
+        'click': function () {
+          alert("6");
+        },
+        'mouseover': function () {
+          console.log('6');
+        },
+
+
+      },
+    },
+    {
+      title: '7',
+      tag: 'i',
+      events: {
+        'click': function () {
+          alert("7");
+        },
+        'mouseover': function () {
+          console.log('7');
+        },
+
+      },
+    },
+    {
+      title: '8',
+      tag: 'ins',
+      events: {
+        'click': function () {
+          alert("8");
+        },
+        'mouseover': function () {
+          console.log('8');
+        },
+
+      },
+    },
+    {
+      title: '9',
+      tag: 'strong',
+      events: {
+        'click': function () {
+          alert("9");
+        },
+        'mouseover': function () {
+          console.log('9');
+        },
+
+
+      },
+    },
+    {
+      title: '0',
+      tag: 'title',
+      events: {
+        'click': function () {
+          alert("0");
+        },
+        'focus': function () {
+          alert('0');
+        },
+
+
+      },
+    },
+
+  ];
+
+
+  function CreateElements(array) {
+    for (let index = 0; index < array.length; index++) {
+      const property = array[index];
+      var el = document.createElement(property.tag);
+      
+      el.id = 'btn';
+      el.value = property.title;
+      
+      var text = document.createTextNode(property.title);
+      el.appendChild(text);
+      
+      var events = property.events;
+
+        for (var key in events) {
+          
+         el.addEventListener(key, events[key]);
+
+			
+         
+    
+       
+      
+      
+      document.body.appendChild(el);
+
+     
+    }
+
+    }
+
+  };
+
+  CreateElements(properties);
+  
+</script>
+
+</html>
